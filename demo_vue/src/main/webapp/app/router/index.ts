@@ -25,6 +25,12 @@ const JhiLogsComponent = () => import('../admin/logs/logs.vue');
 const JhiAuditsComponent = () => import('../admin/audits/audits.vue');
 const JhiMetricsComponent = () => import('../admin/metrics/metrics.vue');
 /* tslint:disable */
+// prettier-ignore
+const Book = () => import('../entities/book/book.vue');
+// prettier-ignore
+const BookUpdate = () => import('../entities/book/book-update.vue');
+// prettier-ignore
+const BookDetails = () => import('../entities/book/book-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 Vue.use(Router);
@@ -147,6 +153,31 @@ export default new Router({
       name: 'JhiConfigurationComponent',
       component: JhiConfigurationComponent,
       meta: { authorities: ['ROLE_ADMIN'] }
+    }
+    ,
+    {
+      path: '/entity/book',
+      name: 'Book',
+      component: Book,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/book/new',
+      name: 'BookCreate',
+      component: BookUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/book/:bookId/edit',
+      name: 'BookEdit',
+      component: BookUpdate,
+      meta: { authorities: ['ROLE_USER'] }
+    },
+    {
+      path: '/entity/book/:bookId/view',
+      name: 'BookView',
+      component: BookDetails,
+      meta: { authorities: ['ROLE_USER'] }
     }
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
   ]

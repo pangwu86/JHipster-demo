@@ -36,7 +36,10 @@
     "enableTranslation": true,
     "clientPackageManager": "npm",
     "nativeLanguage": "zh-cn",
-    "languages": ["zh-cn", "en"],
+    "languages": [
+      "zh-cn",
+      "en"
+    ],
     "blueprints": [
       {
         "name": "generator-jhipster-vuejs",
